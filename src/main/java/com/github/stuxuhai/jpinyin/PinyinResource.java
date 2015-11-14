@@ -38,9 +38,4 @@ public class PinyinResource {
 		String resourceName = "/data/mutil_pinyin.db";
 		return getResource(resourceName);
 	}
-
-	protected static Properties getChineseTable() {
-		String resourceName = "/data/chinese.db";
-		return getResource(resourceName);
-	}
 }

@@ -89,14 +89,14 @@ public class PinyinHelper {
 	 * @return 格式转换后的拼音
 	 */
 	private static String[] formatPinyin(String pinyinString, PinyinFormat pinyinFormat) {
-		if (pinyinFormat == PinyinFormat.WITH_TONE_MARK) {
-			return pinyinString.split(PINYIN_SEPARATOR);
-		} else if (pinyinFormat == PinyinFormat.WITH_TONE_NUMBER) {
-			return convertWithToneNumber(pinyinString);
-		} else if (pinyinFormat == PinyinFormat.WITHOUT_TONE) {
-			return convertWithoutTone(pinyinString);
+		switch (pinyinFormat) {
+			case WITH_TONE_MARK:
+				return pinyinString.split(PINYIN_SEPARATOR);
+			case WITH_TONE_NUMBER:
+				return convertWithToneNumber(pinyinString);
+			default:
+				return convertWithoutTone(pinyinString);
 		}
-		return null;
 	}
 
 	/**
